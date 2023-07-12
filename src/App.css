@@ -79,3 +79,14 @@ li::first-letter{
 .del{
   display: none;
 }
+
+
+
+@media all and (max-width:600px){
+  .containerWithList{
+    width: 260px;
+  }
+   .eachRecipe{
+    width: 300px;
+   }
+}
