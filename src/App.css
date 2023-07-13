@@ -79,7 +79,18 @@ li::first-letter{
 .del{
   display: none;
 }
-
+.containerSaved{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.saved{
+  background-color:rgba(122, 224, 190, 0.712);
+  width: 200px;
+  margin: 10px;
+  height: auto;
+}
 
 
 @media all and (max-width:600px){
