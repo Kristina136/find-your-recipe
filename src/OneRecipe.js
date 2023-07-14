@@ -1,4 +1,4 @@
-function OneRecipe ({list, word,newFunk1, newFunc, label, calories, ingredientLines, url, img, ingredients}){
+function OneRecipe ({list,prop, word,newFunk1, newFunc2, newFunc, label, calories, ingredientLines, url, img, ingredients}){
 
     let ArrFromAlIng=""
     let filteredIng=[]
@@ -19,10 +19,20 @@ const line =(e)=>{
     }
 }
 const save=()=>{
-newFunk1(word.push(<div className="saved" key={label}>{label}</div>))
+newFunk1(word.push(
+<div className="saved" key={label}>
+<img className="smallImg" src={img} alt="alt" width="100px"/>
+    <h3>{label}</h3>
+    <a href={url}>Open recipe</a>
+
+</div>))
+
 }
 
-
+// const save=()=>{
+//     newFunk1(word.push(label))
+//     console.log(word.push(label))
+//     }
 
       return(
       <div>

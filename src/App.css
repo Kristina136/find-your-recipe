@@ -91,6 +91,9 @@ li::first-letter{
   margin: 10px;
   height: auto;
 }
+.smallImg{
+  border-radius:50px;
+}
 
 
 @media all and (max-width:600px){

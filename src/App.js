@@ -13,24 +13,16 @@ function App() {
 
   const[input, setInput]= useState("");
   const[myRec, setMyRes]= useState([]);
-  const[wordApi, setWordApi]= useState(localStorage.wordApi || "salmon");
+  const[wordApi, setWordApi]= useState(localStorage.wordApi ? JSON.parse(localStorage.wordApi) : "salmon");
   
   const [list, setList]=useState([])
   const [word, setWord] =useState([])
 
-
-
-
- // localStorage for save a word in input
+ //localStorage for save a word in input
   useEffect(()=>{
-    localStorage.setItem("wordApi", wordApi)
+    localStorage.setItem("wordApi", JSON.stringify(wordApi))
   }, [wordApi])
 
-  //  // localStorage for save a recipe by click
-  // useEffect(()=>{
-  //   localStorage.setItem("word", word)
-  // }, [word])
- 
 const filtered=()=>{
   setList([list])
   }
@@ -66,11 +58,12 @@ const save=()=>{
 
   return (
     <div className="App">
+  
      <h1>Find recipe by ingredient</h1>
     <Added 
     list={list}/>
      <form onSubmit={searchRec}>
-<input onChange={userInput} value={input} placeholder="Find recipes..."/>
+<input onChange={userInput} value={input} placeholder="Find recipes by ingredients..."/>
 </form>
 <button onClick={searchRec}>Search</button>
   <div>
@@ -83,7 +76,6 @@ const save=()=>{
 {myRec.map((el,i)=>{return<OneRecipe key={i}
  label={el.recipe.label}
  calories={el.recipe.calories}
- ingredientLines={el.recipe.ingredientLines}
  url={el.recipe.url}
  img={el.recipe.image}
 ingredients= {el.recipe.ingredients}
