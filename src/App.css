@@ -153,8 +153,8 @@ nav{
 @media all and (max-width:500px){
   body{
     background-image: url(food.jpg);
+    background-repeat: repeat;
   }
-  
   .containerWithList{
     width: 260px;
   }
@@ -173,5 +173,11 @@ nav{
   }
   button{
     background-color: #b40009;
+  }
+  nav{
+    margin-top: 40px;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 50px;
   }
 }
