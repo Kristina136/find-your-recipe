@@ -5,11 +5,14 @@
   justify-content: center;
   flex-direction: column;
   margin: auto;
+  font-family: 'Quicksand', sans-serif;
 }
 body{
-  background-image: url(6067.jpg);
+  color: rgba(0, 0, 0, 0.817);
+  background-image: url(plate.jpg);
   background-size: 100vw;
-  background-repeat: repeat-y;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 form{
   margin-top: 30px;
@@ -21,13 +24,30 @@ button{
   height: 50px;
   font-size: 20px;
   border-radius: 40px;
-  background-color: rgb(141, 210, 187);
+  background-color: #b4000954;
+  color: bisque;
+}
+
+
+.btnAddToGrosseryList{
+  background-color: #0b0101ab;
+  width: 40px;
+  height: 40px;
+  margin: 3px;
+  border-radius:10px;
+}
+h1, h2{
+  color: bisque;
+}
+.label{
+  color: black;
 }
 input{
   width: 200px;
   height: 40px;
   border-radius: 30px;
   text-align: center;
+
 }
 .selected{
   background-color: aqua;
@@ -40,20 +60,24 @@ input{
 }
 .containerWithList{
   display: flex;
-  background-color: rgba(250, 235, 215, 0.953);
+  background-color: rgba(255, 228, 196, 0.586);
 justify-content: center;
 flex-direction: column;
+text-align: center;
   margin: auto;
-  border: 1px solid black;
   width: 400px;
 }
 .eachRecipe{
-  background-color: bisque;
-  width: 500px;
+  background-color: rgba(255, 228, 196, 0.655);
+  width: 400px;
   margin: auto;
   margin-bottom: 20px;
   padding: 30px;
 }
+.eachRecipe:hover{
+  transform: scale(1.1);
+  transition: 1s;
+ }
 .list{
   width: 90%;
   text-align: center;
@@ -94,9 +118,43 @@ li::first-letter{
 .smallImg{
   border-radius:50px;
 }
+.btn{
+  width: auto;
+  color: rgba(0, 0, 0, 0.711);
+  border-radius: 10px;
+  background-color:rgb(215, 214, 212);
+ 
+}
+.btn:hover{
+   transform: scale(1.1);
+   transition: 1s;
+   background-color: rgb(246, 180, 180);
+}
+a{
+  font-size: 20px;
+  padding: 5px;
+  color: #1f0102cf;
+}
+nav{
+  display: flex;
+  justify-content: space-around;
+  background-color: rgba(163, 163, 192, 0.558);
+  height: 50px;
+  font-family: 'Quicksand', sans-serif;
+}
+.link{
+  text-decoration: none;
+  font-size: 25px;
+  padding: 5px;
+  font-weight: 800;
+}
 
 
 @media all and (max-width:500px){
+  body{
+    background-image: url(food.jpg);
+  }
+  
   .containerWithList{
     width: 260px;
   }
@@ -107,5 +165,13 @@ li::first-letter{
     width: 100px;
     margin: 5px;
     font-size: 12px;
+    padding: 3px;
+  }
+  a{
+    font-size: 15px;
+    color: #b40009;
+  }
+  button{
+    background-color: #b40009;
   }
 }
