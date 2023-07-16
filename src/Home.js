@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import OneRecipe from './OneRecipe';
-import Added from './Added';
+
 
 
 
@@ -68,9 +68,7 @@ const save=()=>{
 <button onClick={searchRec}>Search</button>
   <div>
     <h2> {myRec.length} recipes is found</h2>
-{/* <div className='containerSaved'>
-  {word}
-  </div> */}
+
 
 <div className='allRecipe'>
 {myRec.map((el,i)=>{return<OneRecipe key={i}
