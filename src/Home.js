@@ -36,7 +36,6 @@ const save=()=>{
       const response= await fetch(`https://api.edamam.com/search?q=${wordApi}&app_id=${id}&app_key=${key}`)
       const data=await response.json();
       setMyRes(data.hits)
-      console.log(data.hits)
     }
       getRecipe()
       },[wordApi] )
@@ -81,6 +80,7 @@ newFunc={filtered}
  newFunk1={save}
 list={list}
 word={word}
+setWord={setWord}
 setInput={setInput}
  />})}
  </div>

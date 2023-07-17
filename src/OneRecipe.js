@@ -8,23 +8,33 @@ function OneRecipe ({list, totalTime, word,newFunk1, newFunc, label, calories, u
 
     let ArrFromAlIng=""
     let filteredIng=[]
-    let filteredArr=[]
     const [stateAdded, setStateAdded]= useState(false)
 const [activTab, setActivTab]=useState(1)
 
 //add ingredients in the grossery list
-     const filtered=(ing, id)=>{
-     filteredArr.push(filteredIng.filter((item, index)=>(index === id)))
-     newFunc(list.push(<li className="list" key={id} onClick={line} >{filteredArr.join()}</li>))
+//      const filtered=(ing, id)=>{
+//      filteredArr.push(filteredIng.filter((item, index)=>(index === id)))
+//      newFunc(list.push(<li className="list" key={id} onClick={line} >{filteredArr.join()}</li>))
+// }
+
+const filtered=(ing, id)=>{
+    let arrWithFood= ingredients.map(e=>e.food)
+  const filteredArr =[]
+  filteredArr.push(arrWithFood.filter((item, index)=>(index===id)))
+   newFunc(list.push(filteredArr))
+
+  
 }
-//add and delete ingredients from glossery list
-const line =(e)=>{
-    const li= e.target
-    li.classList.toggle("red")
-    if(e.detail === 2){
-        li.classList.toggle("del")
-    }
-}
+
+
+// //add and delete ingredients from glossery list
+// const line =(e)=>{
+//     const li= e.target
+//     li.classList.toggle("red")
+//     if(e.detail === 2){
+//         li.classList.toggle("del")
+//     }
+// }
 
 //display favorites element
 const save=()=>{
