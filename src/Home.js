@@ -14,6 +14,9 @@ function Home({ word, setWord ,list, setList}) {
   const[myRec, setMyRes]= useState([]);
   const[wordApi, setWordApi]= useState(localStorage.wordApi ? JSON.parse(localStorage.wordApi) : "salmon");
   
+  // const [list, setList]=useState([])
+//   const [word, setWord] =useState([])
+
  //localStorage for save a word in input
   useEffect(()=>{
     localStorage.setItem("wordApi", JSON.stringify(wordApi))
@@ -34,6 +37,7 @@ const save=()=>{
       const response= await fetch(`https://api.edamam.com/search?q=${wordApi}&app_id=${id}&app_key=${key}`)
       const data=await response.json();
       setMyRes(data.hits)
+      console.log(data.hits)
     }
       getRecipe()
       },[wordApi] )
@@ -61,7 +65,7 @@ const save=()=>{
      <form onSubmit={searchRec}>
 <input onChange={userInput} value={input} placeholder="Find recipes by ingredients..."/>
 </form>
-<button onClick={searchRec}>Search</button>
+<button className='btnSearch' onClick={searchRec}>Search</button>
   <div>
     <h2> {myRec.length} recipes is found</h2>
 
@@ -73,6 +77,7 @@ const save=()=>{
  url={el.recipe.url}
  img={el.recipe.image}
 ingredients= {el.recipe.ingredients}
+totalTime={el.recipe.totalTime}
 newFunc={filtered}
  newFunk1={save}
 list={list}

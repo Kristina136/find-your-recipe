@@ -1,12 +1,17 @@
 import { useState } from "react"
 import done2 from "./done2.gif"
-function OneRecipe ({list, word,newFunk1, newFunc, label, calories, url, img, ingredients}){
+import TabsItem from "./TabsItem"
+import Tabs from "./Tabs"
+import TabsInfoOne from "./TabsInfoOne"
+import TabsInfoTwo from "./TabsInfoTwo"
+import TabsInfoTree from "./TabsInfoTree"
+function OneRecipe ({list, totalTime, word,newFunk1, newFunc, label, calories, url, img, ingredients}){
 
     let ArrFromAlIng=""
     let filteredIng=[]
     let filteredArr=[]
     const [stateAdded, setStateAdded]= useState(false)
-
+const [activTab, setActivTab]=useState(1)
 
 //add ingredients in the grossery list
      const filtered=(ing, id)=>{
@@ -40,16 +45,13 @@ newFunk1(word.push(
       <div className="eachRecipe">
         <img src={img} alt="alt" width="200px"/>
 <h2 className="label" onClick={save}>{label}</h2>
-<h3>Callories : {calories.toFixed()} Kcal</h3>
-<ul>
-    {ingredients.map((ing,id)=>{
-         let arr= (ArrFromAlIng+=ing.food+"+").split("+")
-         if (arr.length===ingredients.length+1){filteredIng.push(...arr)} 
-          return(<li className="allIng"  key={id}>{ing.food} <button onClick={()=>filtered(ing, id)} className="btnAddToGrosseryList">🛒</button></li>)
-          
-        }
-    )}
-</ul>
+
+
+<Tabs setActivTab={setActivTab}/>
+{activTab===0 && <TabsInfoOne filtered={filtered} filteredIng={filteredIng} ingredients={ingredients} ArrFromAlIng={ArrFromAlIng}/>}
+{activTab===1 && <TabsInfoTwo calories={calories}/>}
+{activTab===2 && <TabsInfoTree totalTime={totalTime}/>}
+
 <a href={url}>Open recipe</a> <br></br>
 <button onClick={save} className="btn">{stateAdded ?  <img src={done2} width="45px" alt="done"/> : "Add to favorites" }</button>
 
