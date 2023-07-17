@@ -14,8 +14,7 @@ function Home({ word, setWord ,list, setList}) {
   const[myRec, setMyRes]= useState([]);
   const[wordApi, setWordApi]= useState(localStorage.wordApi ? JSON.parse(localStorage.wordApi) : "salmon");
   
-  // const [list, setList]=useState([])
-//   const [word, setWord] =useState([])
+
 
  //localStorage for save a word in input
   useEffect(()=>{

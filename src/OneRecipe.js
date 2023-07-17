@@ -1,6 +1,5 @@
 import { useState } from "react"
 import done2 from "./done2.gif"
-import TabsItem from "./TabsItem"
 import Tabs from "./Tabs"
 import TabsInfoOne from "./TabsInfoOne"
 import TabsInfoTwo from "./TabsInfoTwo"
