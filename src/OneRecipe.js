@@ -11,42 +11,21 @@ function OneRecipe ({list, totalTime, word,newFunk1, newFunc, label, calories, u
     const [stateAdded, setStateAdded]= useState(false)
 const [activTab, setActivTab]=useState(1)
 
-//add ingredients in the grossery list
-//      const filtered=(ing, id)=>{
-//      filteredArr.push(filteredIng.filter((item, index)=>(index === id)))
-//      newFunc(list.push(<li className="list" key={id} onClick={line} >{filteredArr.join()}</li>))
-// }
-
+//add to Grossery List
 const filtered=(ing, id)=>{
-    let arrWithFood= ingredients.map(e=>e.food)
-  const filteredArr =[]
-  filteredArr.push(arrWithFood.filter((item, index)=>(index===id)))
-   newFunc(list.push(filteredArr))
-
-  
+    let arrWithFood= ingredients.map(e=>e.food) 
+  let filteredArr=arrWithFood.filter((item, index)=>{ if(index===id) {return <li>{item}</li>}})
+ console.log(filteredArr)
+  newFunc([list.push(filteredArr.join())])
 }
-
-
-// //add and delete ingredients from glossery list
-// const line =(e)=>{
-//     const li= e.target
-//     li.classList.toggle("red")
-//     if(e.detail === 2){
-//         li.classList.toggle("del")
-//     }
-// }
 
 //display favorites element
 const save=()=>{
+    let arrWithFood= ingredients.map(e=>e.food) 
+// console.log(arrWithFood) //['sugar', 'lemons', ..]
     setStateAdded(true)
-newFunk1(word.push(
-<div className="saved" key={label}>
-<img className="smallImg" src={img} alt="alt" width="100px"/>
-    <h3>{label}</h3>
-    <a href={url}>Open recipe</a>
-</div>))
+newFunk1([word.push([img,label,url,arrWithFood])])
 }
-
 
 
       return(

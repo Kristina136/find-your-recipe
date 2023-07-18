@@ -20,14 +20,20 @@ function Home({ word, setWord ,list, setList}) {
   useEffect(()=>{
     localStorage.setItem("wordApi", JSON.stringify(wordApi))
   }, [wordApi])
-
+  
 const filtered=()=>{
-  setList([list])
+  setList([...list])
   }
 const save=()=>{
-  setWord([word])
+  setWord([...word])
 }
-
+const add=()=>{
+  setList([...list])
+}
+// const addFromFav=()=>{
+//   setList([...list])
+// }
+// newFunk2={addFromFav}
 
 
 //get API
@@ -70,14 +76,15 @@ const save=()=>{
 
 <div className='allRecipe'>
 {myRec.map((el,i)=>{return<OneRecipe key={i}
- label={el.recipe.label}
- calories={el.recipe.calories}
- url={el.recipe.url}
- img={el.recipe.image}
+label={el.recipe.label}
+calories={el.recipe.calories}
+url={el.recipe.url}
+img={el.recipe.image}
 ingredients= {el.recipe.ingredients}
 totalTime={el.recipe.totalTime}
 newFunc={filtered}
- newFunk1={save}
+newFunk1={save}
+newFunk2={add}
 list={list}
 word={word}
 setWord={setWord}

@@ -16,7 +16,10 @@ function App() {
 
   const [word, setWord] =useState([])
   const [list, setList]=useState([])
-
+  const addFromFav=()=>{
+    setList([...list])
+  }
+  
   return (<Router>
 <nav>
   <Link to="/" className='link'>Home</Link>
@@ -26,8 +29,8 @@ function App() {
 </nav>
 <Routes>
 <Route path='/' element={<Home  word={word} setWord={setWord}  list={list} setList={setList}/>}/>
-<Route path='/Favorites' element={<Favorites word={word}/>}/>
-<Route path='/Grossery-list' element={<Added list={list}/>}/>
+<Route path='/Favorites' element={<Favorites newFunk2={addFromFav} word={word} setWord={setWord}  list={list} setList={setList}/>}/>
+<Route path='/Grossery-list' element={<Added list={list} setList={setList}/>}/>
 
 
 
