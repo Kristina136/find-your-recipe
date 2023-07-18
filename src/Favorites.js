@@ -17,7 +17,7 @@ function Favorites ({word, setWord,list, setList, newFunk2}){
    const [a, setA] = useState(true)
    //add to Grossery List by click
    const add=(el, id)=>{
-     newFunk2([list.push((word.map(e=>(e[3])).flat().filter((item, index)=>{ if(index===id) {return item}}).join()))])
+     newFunk2([list.push((word.map(e=>(e[3])).flat().filter((item, index)=>(index===id && item)).join()))])
      setA(false)
 }
    

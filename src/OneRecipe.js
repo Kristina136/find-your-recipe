@@ -14,7 +14,7 @@ const [activTab, setActivTab]=useState(1)
 //add to Grossery List
 const filtered=(ing, id)=>{
     let arrWithFood= ingredients.map(e=>e.food) 
-  let filteredArr=arrWithFood.filter((item, index)=>{ if(index===id) {return <li>{item}</li>}})
+  let filteredArr=arrWithFood.filter((item, index)=>( index===id &&  <li>{item}</li>))
  console.log(filteredArr)
   newFunc([list.push(filteredArr.join())])
 }
