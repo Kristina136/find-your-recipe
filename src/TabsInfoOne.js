@@ -1,13 +1,21 @@
 
-function TabsInfoOne ({ingredients, filtered}){
+import ComponentHomeIngAndButton from "./ComponetHomeIngAndButton"
 
+function TabsInfoOne ({ingredients, newFunc, list}){
 
+    
 
     return(<div className="containerWithList">
         
  <ul>
     {ingredients.map((ing,id)=>{
-          return(<li className="allIng"  key={id}>{ing.food} <button onClick={()=>filtered(ing, id)} className="btnAddToGrosseryList">🛒</button></li>)
+          return(<ComponentHomeIngAndButton key={id}
+            ingredients={ingredients}
+            newFunc={newFunc}
+            list={list}
+            ing={ing}
+            id={id}
+            />)
         }
     )}
 </ul> 

@@ -1,8 +1,7 @@
 
-import { useState } from "react"
 import ComponentWithIng from "./ComponentWithIng"
 
-function Favorites ({word, setWord,list, setList, newFunk2}){
+function Favorites ({word, setWord, list, setList, newFunk2}){
 
        
   //delete element from  favorites
@@ -10,12 +9,7 @@ function Favorites ({word, setWord,list, setList, newFunk2}){
   setWord(word.filter((item, id)=>(id!==i)))
  }
    
- const [a, setA] = useState(true)
- //add to Grossery List by click
- const add=(el, id)=>{
-   newFunk2([list.push((word.map(e=>(e[3])).flat().filter((item, index)=>(index===id && item)).join()))])
-   setA(false)
-}
+
 
 
   return(<div className="App">
@@ -30,8 +24,8 @@ function Favorites ({word, setWord,list, setList, newFunk2}){
    newFunk2={newFunk2} 
    element={element} 
    deleteFromFav={deleteFromFav}
-   add={add}
-   a={a}
+word={word}
+list={list}
    />)})}
  </div>
 </div>

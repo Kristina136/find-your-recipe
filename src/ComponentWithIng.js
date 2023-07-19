@@ -1,6 +1,7 @@
 import { useState } from "react"
+import ComponentIngAndBtn from "./ComponentIngAndBtn"
 
-function ComponentWithIng ({deleteFromFav, add, a, img, label,ingredients, link, element, i}){
+function ComponentWithIng ({newFunk2, list, word, deleteFromFav, add, a, img, label,ingredients, link, element, i}){
 
 
   
@@ -22,10 +23,17 @@ function ComponentWithIng ({deleteFromFav, add, a, img, label,ingredients, link,
       {!isOpen ? "Close ingredient's list" : "Open ingredient's list"}
     </button>
    
-    {!isOpen && <div className="">{ingredients.map((el, id)=>{return (<div className="contIngAndBtn" key={id}> 
-      <li className="list">{el}</li>
-      <button  onClick={()=>add(el,id)}  className="btnAddToGrosseryList">{a ? "Add" : "✔️"}</button>
-      </div>)})
+    {!isOpen && 
+    <div>{ingredients.map((el, id)=>{
+        return (<ComponentIngAndBtn
+        el={el}
+        id={id}
+        key={id}
+        add={add}
+        newFunk2={newFunk2}
+        word={word}
+        list={list}
+        />)})
     
     }</div>
    }
@@ -38,6 +46,3 @@ function ComponentWithIng ({deleteFromFav, add, a, img, label,ingredients, link,
           )
       }
       export default ComponentWithIng;
-
-
-

@@ -30,10 +30,6 @@ const save=()=>{
 const add=()=>{
   setList([...list])
 }
-// const addFromFav=()=>{
-//   setList([...list])
-// }
-// newFunk2={addFromFav}
 
 
 //get API

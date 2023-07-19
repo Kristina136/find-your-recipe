@@ -127,6 +127,7 @@ li::first-letter{
   width: 250px;
   margin: 10px;
   height: auto;
+  padding: 30px;
 }
 .smallImg{
   border-radius:50px;
@@ -135,9 +136,11 @@ li::first-letter{
   padding: 5px;
   border-radius: 30%;
   margin-bottom: 0%;
+  margin-top: 20px;
 }
 .btnDelFromFav:hover{
   background-color: rgb(246, 180, 180);
+ 
 }
 .btnEachAccordion{
 border-radius: 0%;
@@ -200,11 +203,16 @@ height: 40px;
 font-size: 20px;
 color: bisque;
 }
+
 .btnEachTabs:hover{
 background-color: rgba(160, 216, 216, 0.534);
 }
 .a{
   background-color: #b40009;
+  margin-top: 15px;
+}
+.contTabs{
+  margin-bottom: 10px;
 }
 
 @media all and (max-width:950px){

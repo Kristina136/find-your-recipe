@@ -11,13 +11,7 @@ function OneRecipe ({list, totalTime, word,newFunk1, newFunc, label, calories, u
     const [stateAdded, setStateAdded]= useState(false)
 const [activTab, setActivTab]=useState(1)
 
-//add to Grossery List
-const filtered=(ing, id)=>{
-    let arrWithFood= ingredients.map(e=>e.food) 
-  let filteredArr=arrWithFood.filter((item, index)=>( index===id &&  <li>{item}</li>))
- console.log(filteredArr)
-  newFunc([list.push(filteredArr.join())])
-}
+
 
 //display favorites element
 const save=()=>{
@@ -27,21 +21,28 @@ const save=()=>{
 newFunk1([word.push([img,label,url,arrWithFood])])
 }
 
-
       return(
       <div>
       <div className="eachRecipe">
         <img src={img} alt="alt" width="200px"/>
 <h2 className="label" onClick={save}>{label}</h2>
 
-
 <Tabs setActivTab={setActivTab}/>
-{activTab===0 && <TabsInfoOne filtered={filtered} filteredIng={filteredIng} ingredients={ingredients} ArrFromAlIng={ArrFromAlIng}/>}
+{activTab===0 && <TabsInfoOne 
+                                filteredIng={filteredIng} 
+                                ingredients={ingredients} 
+                                ArrFromAlIng={ArrFromAlIng}
+                                list={list}
+                                newFunc={newFunc}
+                                />}
 {activTab===1 && <TabsInfoTwo calories={calories}/>}
 {activTab===2 && <TabsInfoTree totalTime={totalTime}/>}
 
 <a href={url}>Open recipe</a> <br></br>
-<button onClick={save} className="btn">{stateAdded ?  <img src={done2} width="45px" alt="done"/> : "Add to favorites" }</button>
+
+<button onClick={save} className="btn">{stateAdded ?  
+<img src={done2} width="45px" alt="done"/> : "Add to favorites" }
+</button>
 
 
 </div>
