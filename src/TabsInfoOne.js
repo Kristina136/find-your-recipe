@@ -1,5 +1,5 @@
 
-function TabsInfoOne ({ingredients, filtered, filteredIng, ArrFromAlIng}){
+function TabsInfoOne ({ingredients, filtered}){
 
 
 
