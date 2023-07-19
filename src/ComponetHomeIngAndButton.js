@@ -17,7 +17,7 @@ function ComponentHomeIngAndButton ({ingredients, newFunc, list, ing, id}){
     }
 
     return(
-        <div><li className="allIng"  key={id}>{ing.food} 
+        <div><li className="contIngAndBtn"  key={id}>{ing.food} 
           <button onClick={()=>filtered(ing, id)} className="btnAddToGrosseryList">{a ? "✔️" : "🛒"}</button>
           </li></div>
           )
