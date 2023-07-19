@@ -4,7 +4,7 @@ import { useState } from "react"
 
 function ComponentIngAndBtn ({newFunk2, list, word, el, id}){
 
-
+//state with true or false
     const [a, setA] = useState(true)
     
 

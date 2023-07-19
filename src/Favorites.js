@@ -1,15 +1,12 @@
 
 import ComponentWithIng from "./ComponentWithIng"
 
-function Favorites ({word, setWord, list, setList, newFunk2}){
+function Favorites ({word, setWord, list, newFunk2}){
 
-       
   //delete element from  favorites
  const deleteFromFav=(e,i)=>{
   setWord(word.filter((item, id)=>(id!==i)))
  }
-   
-
 
 
   return(<div className="App">

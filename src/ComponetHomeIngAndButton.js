@@ -4,6 +4,8 @@ import { useState } from "react"
 
 function ComponentHomeIngAndButton ({ingredients, newFunc, list, ing, id}){
 
+
+    //state with true or false
     const [a, setA] = useState(false)
 
     //add to Grossery List

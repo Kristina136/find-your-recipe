@@ -6,7 +6,7 @@ import {
   Link
 } from "react-router-dom";
 import Home from './Home';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Favorites from './Favorites';
 import Added from './Added';
 
@@ -14,12 +14,23 @@ import Added from './Added';
 
 function App() {
 
-  const [word, setWord] =useState([])
-  const [list, setList]=useState([])
+  const [word, setWord] =useState(localStorage.word ? JSON.parse(localStorage.word) :[])
+  const [list, setList]=useState(localStorage.list ? JSON.parse(localStorage.list) :[])
   const addFromFav=()=>{
     setList([...list])
   }
   
+ //localStorage for save recipe in favorite
+ useEffect(()=>{
+  localStorage.setItem("word", JSON.stringify(word))
+}, [word])
+
+ //localStorage for save recipe in favorite
+ useEffect(()=>{
+  localStorage.setItem("list", JSON.stringify(list))
+}, [list])
+
+
   return (<Router>
 <nav>
   <Link to="/" className='link'>Home</Link>
