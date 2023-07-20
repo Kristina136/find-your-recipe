@@ -1,6 +1,6 @@
 import './App.css';
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Routes,
   Route,
   Link
@@ -25,12 +25,12 @@ function App() {
   localStorage.setItem("word", JSON.stringify(word))
 }, [word])
 
- //localStorage for save recipe in favorite
+ //localStorage for save ingredients in grossery list
  useEffect(()=>{
   localStorage.setItem("list", JSON.stringify(list))
 }, [list])
 
-
+console.log(list)
   return (<Router>
 <nav>
   <Link to="/" className='link'>Home</Link>
