@@ -4,7 +4,7 @@ import OneRecipe from './OneRecipe';
 
 
 
-function Home({ word, setWord ,list, setList}) {
+function Home({ word, setWord ,list, setList, addFunc}) {
 
 
   const id="640ffb22";
@@ -19,14 +19,9 @@ function Home({ word, setWord ,list, setList}) {
     localStorage.setItem("wordApi", JSON.stringify(wordApi))
   }, [wordApi])
   
-const filtered=()=>{
-  setList([...list])
-  }
+
 const save=()=>{
   setWord([...word])
-}
-const add=()=>{
-  setList([...list])
 }
 
 
@@ -62,8 +57,9 @@ const add=()=>{
     list={list}/> */}
      <form onSubmit={searchRec}>
 <input onChange={userInput} value={input} placeholder="Find recipes by ingredients..."/>
+<button className='btnSearch'>Search</button>
 </form>
-<button className='btnSearch' onClick={searchRec}>Search</button>
+
   <div>
     <h2> {myRec.length} recipes is found</h2>
 
@@ -76,9 +72,9 @@ url={el.recipe.url}
 img={el.recipe.image}
 ingredients= {el.recipe.ingredients}
 totalTime={el.recipe.totalTime}
-newFunc={filtered}
-newFunk1={save}
-newFunk2={add}
+addFunc={addFunc}
+saveToFav={save}
+
 list={list}
 word={word}
 setWord={setWord}

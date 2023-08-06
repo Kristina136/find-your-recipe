@@ -1,7 +1,7 @@
 
 import ComponentHomeIngAndButton from "./ComponetHomeIngAndButton"
 
-function TabsInfoOne ({ingredients, newFunc, list}){
+function TabsInfoOne ({ingredients, addFunc, list}){
 
     
 
@@ -11,7 +11,7 @@ function TabsInfoOne ({ingredients, newFunc, list}){
     {ingredients.map((ing,id)=>{
           return(<ComponentHomeIngAndButton key={id}
             ingredients={ingredients}
-            newFunc={newFunc}
+            addFunc={addFunc}
             list={list}
             ing={ing}
             id={id}

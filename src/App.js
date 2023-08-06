@@ -16,6 +16,7 @@ function App() {
 
   const [word, setWord] =useState(localStorage.word ? JSON.parse(localStorage.word) :[])
   const [list, setList]=useState(localStorage.list ? JSON.parse(localStorage.list) :[])
+  
   const addFromFav=()=>{
     setList([...list])
   }
@@ -39,8 +40,8 @@ console.log(list)
 
 </nav>
 <Routes>
-<Route path='/' element={<Home  word={word} setWord={setWord}  list={list} setList={setList}/>}/>
-<Route path='/Favorites' element={<Favorites newFunk2={addFromFav} word={word} setWord={setWord}  list={list} setList={setList}/>}/>
+<Route path='/' element={<Home  addFunc={addFromFav}  word={word} setWord={setWord}  list={list} setList={setList}/>}/>
+<Route path='/Favorites' element={<Favorites addFunc={addFromFav} word={word} setWord={setWord}  list={list} setList={setList}/>}/>
 <Route path='/Grossery-list' element={<Added list={list} setList={setList}/>}/>
 
 

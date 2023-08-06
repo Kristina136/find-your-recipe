@@ -1,7 +1,7 @@
 
 import ComponentWithIng from "./ComponentWithIng"
 
-function Favorites ({word, setWord, list, newFunk2}){
+function Favorites ({word, setWord, list, addFunc}){
 
   //delete element from  favorites
  const deleteFromFav=(e,i)=>{
@@ -18,7 +18,7 @@ function Favorites ({word, setWord, list, newFunk2}){
   label={element[1]}
   ingredients={element[3]}
   link={element[2]}
-   newFunk2={newFunk2} 
+  addFunc={addFunc} 
    element={element} 
    deleteFromFav={deleteFromFav}
 word={word}

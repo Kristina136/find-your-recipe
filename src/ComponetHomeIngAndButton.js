@@ -2,23 +2,23 @@
 
 import { useState } from "react"
 
-function ComponentHomeIngAndButton ({ingredients, newFunc, list, ing, id}){
+function ComponentHomeIngAndButton ({ingredients, addFunc, list, ing, id}){
 
 
     //state with true or false
-    const [a, setA] = useState(false)
+    const [changeImg, setChangeImg] = useState(false)
 
     //add to Grossery List
     const filtered=(ing, id)=>{
         let arrWithFood= ingredients.map(e=>e.food) 
       let filteredArr=arrWithFood.filter((item, index)=>( index===id &&  <li>{item}</li>))
-      newFunc([list.push(filteredArr.join())])
-    setA(true)
+      addFunc([list.push(filteredArr.join())])
+      setChangeImg(true)
     }
 
     return(
         <div><li className="contIngAndBtn"  key={id}>{ing.food} 
-          <button onClick={()=>filtered(ing, id)} className="btnAddToGrosseryList">{a ? "✔️" : "🛒"}</button>
+          <button onClick={()=>filtered(ing, id)} className="btnAddToGrosseryList">{changeImg ? "✔️" : "🛒"}</button>
           </li></div>
           )
       }

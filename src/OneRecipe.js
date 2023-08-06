@@ -4,7 +4,7 @@ import Tabs from "./Tabs"
 import TabsInfoOne from "./TabsInfoOne"
 import TabsInfoTwo from "./TabsInfoTwo"
 import TabsInfoTree from "./TabsInfoTree"
-function OneRecipe ({list, totalTime, word,newFunk1, newFunc, label, calories, url, img, ingredients}){
+function OneRecipe ({list, totalTime, word,saveToFav, addFunc, label, calories, url, img, ingredients}){
 
     let ArrFromAlIng=""
     let filteredIng=[]
@@ -18,7 +18,7 @@ const save=()=>{
     let arrWithFood= ingredients.map(e=>e.food) 
 // console.log(arrWithFood) //['sugar', 'lemons', ..]
     setStateAdded(true)
-newFunk1([word.push([img,label,url,arrWithFood])])
+    saveToFav([word.push([img,label,url,arrWithFood])])
 }
 
       return(
@@ -33,12 +33,12 @@ newFunk1([word.push([img,label,url,arrWithFood])])
                                 ingredients={ingredients} 
                                 ArrFromAlIng={ArrFromAlIng}
                                 list={list}
-                                newFunc={newFunc}
+                                addFunc={addFunc}
                                 />}
 {activTab===1 && <TabsInfoTwo calories={calories}/>}
 {activTab===2 && <TabsInfoTree totalTime={totalTime}/>}
 
-<a href={url}>Open recipe</a> <br></br>
+<a href={url}>Open recipe</a> <br/>
 
 <button onClick={save} className="btn">{stateAdded ?  
 <img src={done2} width="45px" alt="done"/> : "Add to favorites" }

@@ -1,7 +1,7 @@
 import { useState } from "react"
 import ComponentIngAndBtn from "./ComponentIngAndBtn"
 
-function ComponentWithIng ({newFunk2, list, word, deleteFromFav, add, a, img, label,ingredients, link, element, i}){
+function ComponentWithIng ({addFunc, list, word, deleteFromFav, add, a, img, label,ingredients, link, element, i}){
 
 
   
@@ -30,7 +30,7 @@ function ComponentWithIng ({newFunk2, list, word, deleteFromFav, add, a, img, la
         id={id}
         key={id}
         add={add}
-        newFunk2={newFunk2}
+        addFunc={addFunc}
         word={word}
         list={list}
         />)})
